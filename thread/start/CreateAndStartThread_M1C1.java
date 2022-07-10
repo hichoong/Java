@@ -19,7 +19,7 @@ public class CreateAndStartThread_M1C1 {
     public static void main(String[] args) {
 
         //SMIFileThread 객체 생성 및 시작
-        Thread smiFileThread = new thread.start.SMIFileThread();
+        Thread smiFileThread = new SMIFileThread();
         smiFileThread.start();
         //#1 비디오프레임1~5
         int[] intArray = {1,2,3,4,5};
