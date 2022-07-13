@@ -9,14 +9,23 @@ public class ChoongsCoffee {
 
         Beverage beverage2 = new DarkRoast(); //1500
         beverage2 = new Mocha(beverage2); //500
+        beverage2.setSize(Beverage.TALL);
         beverage2 = new Mocha(beverage2); //500
+        beverage2.setSize(Beverage.TALL);
         beverage2 = new Whip(beverage2); //200
+        beverage2.setSize(Beverage.TALL);
         System.out.println(beverage2.getDescription() + " 가격 : " + beverage2.cost() + "원입니다.");
 
         Beverage beverage3 = new HouseBlend(); //1500
-        beverage3 = new Soy(beverage3); //300
+        beverage3.setSize(Beverage.VENTI);
+        beverage3 = new Soy(beverage3); //200 300 500
+        beverage3.setSize(Beverage.VENTI);
         beverage3 = new Mocha(beverage3); //500
+        beverage3.setSize(Beverage.VENTI);
         beverage3 = new Whip(beverage3); // 200
+        beverage3.setSize(Beverage.VENTI);
+
+
         System.out.println(beverage3.getDescription() + " 가격 : " + beverage3.cost() + "원입니다.");
     }
 }
