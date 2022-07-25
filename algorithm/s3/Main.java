@@ -1,4 +1,4 @@
-package algorithm.S3;
+package algorithm.s3;
 
 import java.util.Scanner;
 
