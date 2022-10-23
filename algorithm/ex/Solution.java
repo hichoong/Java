@@ -3,6 +3,9 @@ package algorithm.ex;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+    프로그래머스 Lv.0 ~ Lv.1 수준
+ */
 class Solution {
     public static int solution3(int n) {
         int answer = 0;
@@ -74,6 +77,76 @@ class Solution {
         }
         //String을 다시 숫자로 변환
         answer = Long.parseLong(result);
+        return answer;
+    }
+        //나머지가 1이 되는 가장 작은 수
+        public static int solution7(int n) {
+            int answer = 0;
+            //역순으로 계산해 보기
+            for(int i = n; i > 0; i--) {
+               if(n % i == 1) {
+                   answer = i;
+               }
+            }
+            return answer;
+        }
+        //콜라스 추측
+        public static int solution8(int num) {
+           int answer = 0;
+           Long t = (long) num;
+           while (true) {
+                if(t % 2 == 0) {
+                    t = t / 2;
+                   answer++;
+               }else if(t % 2 != 0) {
+                   t = (t * 3) + 1;
+                   answer++;
+               }
+               if(t == 1) {
+                   break;
+               }
+               if(answer == 500) {
+                   answer = -1;
+                   break;
+               }
+           }
+            System.out.println(answer);
+           return answer;
+        }
+        //두 정수 사이의 합
+        public static long solution9(int a, int b) {
+            long answer = 0;
+            long a_ = a;
+            long b_ = b;
+            //b가 큰 수일 경우
+            if (a_ < b_) {
+                long[] arr = new long[Math.abs((b-a)+1)];
+                for (int i = 0; i < arr.length; i++) {
+                    arr[i] = a_+i;
+                    answer += arr[i];
+            }
+            //a가 큰 수인 경우
+            }else if (a_ > b_){
+                long[] arr = new long[Math.abs((a-b)+1)];
+                for (int i = 0; i < arr.length; i++) {
+                    arr[i] = b_+i;
+                    answer += arr[i];
+                }
+            }else {
+                answer = a;
+            }
+            return answer;
+        }
+        //서울에서 김서방 찾기
+        public String solution10(String[] seoul) {
+        String answer = "";
+        int result = 0;
+            for (int i = 0; i < seoul.length; i++) {
+                if (seoul[i].equals("Kim")) {
+                    result = i;
+                    answer = "김서방은 "+result+ "에 있다";
+                }
+            }
         return answer;
     }
 }
